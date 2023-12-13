@@ -54,50 +54,49 @@ fun main() {
             }
             //go backwards now
             val elementRev = element.reversed()
-            for (i in element.length-1 downTo 0) {
-                if (element[i].isDigit()) {
-                    num2 = element[i].toString().toInt()
+            for (i in 0 until elementRev.length) {
+                if (elementRev[i].isDigit()) {
+                    num2 = elementRev[i].toString().toInt()
                     break
                 }
-                if (i-3 >= 0 && elementRev.substring(i-3,i) == "one".reversed()) {
-                    num2= 1
+                if (i+3 < elementRev.length && elementRev.substring(i, i+3) == "one".reversed()) {
+                    num2 = 1
                     break
                 }
-                if (i-3 >= 0 && elementRev.substring(i-3,i) == "two".reversed())  {
+                if (i+3 < elementRev.length && elementRev.substring(i,i+3) == "two".reversed()) {
                     num2 = 2
                     break
                 }
-                if (i-5 >= 0 && elementRev.substring(i-5,i) == "three".reversed()) {
+                if (i+5 < elementRev.length && elementRev.substring(i,i+5) == "three".reversed()) {
                     num2 = 3
                     break
                 }
-                if (i-4 >= 0 && elementRev.substring(i-4, i) == "four".reversed()) {
+                if (i+4 < elementRev.length && elementRev.substring(i, i+4) == "four".reversed()) {
                     num2 = 4
                     break
                 }
-                if (i-4 >= 0 && elementRev.substring(i-4, i) == "five".reversed()) {
+                if (i+4 < elementRev.length && elementRev.substring(i, i+4) == "five".reversed()) {
                     num2 = 5
                     break
                 }
-                if (i-3 >= 0 && elementRev.substring(i-3, i) == "six".reversed()) {
+                if (i+3 < elementRev.length && elementRev.substring(i, i+3) == "six".reversed()) {
                     num2 = 6
                     break
                 }
-                if (i-5 >= 0 && elementRev.substring(i-5, i) == "seven".reversed()) {
+                if (i+5 < elementRev.length && elementRev.substring(i, i+5) == "seven".reversed()) {
                     num2 = 7
                     break
                 }
-                if (i-5 >= 0 && elementRev.substring(i-5, i) == "eight".reversed()) {
+                if (i+5 < elementRev.length && elementRev.substring(i, i+5) == "eight".reversed()) {
                     num2 = 8
                     break
                 }
-                if (i-4 >= 0 && elementRev.substring(i-4, i) == "nine".reversed()) {
+                if (i+4 < elementRev.length && elementRev.substring(i, i+4) == "nine".reversed()) {
                     num2 = 9
                     break
                 }
             }
             result += num1 + num2
-            println(num1 + num2)
         }
         return result
     }
@@ -106,6 +105,6 @@ fun main() {
 
     // test if implementation meets criteria from the description, like:
 
-    val input = readInput("codeTest")
+    val input = readInput("code")
     part2(input).println()
 }
